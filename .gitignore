@@ -1,0 +1,33 @@
+# От Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# От .NET
+bin/
+obj/
+appsettings.Development.json
+appsettings.json
+secrets.json
+appsettings.Development.json.backup
+
+# От ReSharper
+_ReSharper.*/
+*.[Rr]e[Ss]harper
+*.DotSettings
+
+# От Rider
+.idea/
+
+# От VS Code
+.vscode/
+
+# От macOS
+.DS_Store
+
+# От Windows
+Thumbs.db
+Desktop.ini
