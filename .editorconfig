@@ -1,0 +1,18 @@
+root = true
+
+[*.cs]
+
+# Предпочитать var, когда тип очевиден
+charp_style_var_when_type_is_apparent = true:suggestion
+
+# Для встроенных типов (int, string) -- явный тип
+charp_style_var_built_in_types = false:suggestion
+
+# В остальных случаях -- явный тип
+charp_Style_var_elsewhere =false:warning
+
+# Использовать var вместо явного типа
+dotnet_diagnostic.IDE0007.severity = warning
+
+# Использовать явный тип вместо var
+dotnet_diagnostic.IDE0008.severity = warning

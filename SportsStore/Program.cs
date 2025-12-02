@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StoreDbContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration.GetMainConnectionString());
+        builder.Configuration.GetSportsStoreConnectionString());
 });
 
 // Для EfCore это типовой уровень времени жизни
@@ -19,5 +19,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.MapDefaultControllerRoute();
+
+SeedData.EnsurePopulated(app);
 
 app.Run();
