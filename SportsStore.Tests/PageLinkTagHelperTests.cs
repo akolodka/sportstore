@@ -18,9 +18,9 @@ namespace SportsStore.Tests
             var urlHelper = new Mock<IUrlHelper>();
 
             urlHelper.SetupSequence(x => x.Action(It.IsAny<UrlActionContext>()))
-                  .Returns("Test/Page1")
-                  .Returns("Test/Page2")
-                  .Returns("Test/Page3");
+                     .Returns("Test/Page1")
+                     .Returns("Test/Page2")
+                     .Returns("Test/Page3");
 
             var factory = new Mock<IUrlHelperFactory>();
 
@@ -60,7 +60,7 @@ namespace SportsStore.Tests
             tagHelper.Process(ctx, output);
 
             // Assert
-            Assert.Equal(@"<a href=""Test/Page1"">1</a>"
+            Assert.Equal(@"<a href=""Test/Page1"">1</a>" 
                        + @"<a href=""Test/Page2"">2</a>" 
                        + @"<a href=""Test/Page3"">3</a>", 
                         output.Content.GetContent());

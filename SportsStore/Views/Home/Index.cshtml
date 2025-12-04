@@ -1,9 +1,10 @@
-@model IQueryable<Product>
+@model ProductsListViewModel
 
-@foreach (var p in Model 
-
-    // В контроллер можно передать View без модели, и получить Null
-    ?? Enumerable.Empty<Product>()){
+    
+@foreach (var p in Model.Products 
+        
+                            // В контроллер можно передать View без модели, и получить Null
+                            ?? Enumerable.Empty<Product>()){
 
     <div>
         <h3>@p.Name</h3>
