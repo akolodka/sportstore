@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportsStore.Controllers;
 using SportsStore.Extensions;
 using SportsStore.Models;
 
@@ -18,6 +20,16 @@ builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.MapControllerRoute(
+    name:"pagination",
+    pattern:"Products/Page{productPage}", 
+    new
+    {
+        Controller = "Home",
+        Action = "Index",
+    });
+
 app.MapDefaultControllerRoute();
 
 SeedData.EnsurePopulated(app);
